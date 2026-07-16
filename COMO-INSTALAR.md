@@ -1,22 +1,29 @@
 # ATELIÊ MKT — GUIA DE USO
 
-## 36 agentes · execução + estratégia · memória multi-cliente · Claude Cowork / Code / Chat
+## 37 skills · execução + estratégia + design · memória multi-cliente · Claude Cowork / Code / Chat
 
 ---
 
 ## O QUE É
 
-Sistema de 36 agentes de IA que transforma o Claude numa agência de marketing completa —
+Sistema de 37 skills de IA que transforma o Claude numa agência de marketing completa —
 pensado pra quem atende **vários clientes ao mesmo tempo** (freelancer ou dono de agência).
 
-- **`execucao/`** (22 agentes) — o trabalho tático: carrossel (gera PNG pronto, não só
-  texto), site/landing page (HTML pronto pra publicar), SEO, Google Meu Negócio, Google
-  Ads, Meta Ads, relatórios, WhatsApp, design, copy.
-- **`estrategia/`** (10 agentes) — o diferencial: ofertas (Hormozi), funil de lançamento,
+Organizado no padrão oficial do Claude Code (`.claude/skills/[nome]/SKILL.md`), o que faz
+o comando **"Ative o [nome]"** funcionar direto, sem precisar apontar caminho de arquivo.
+
+- **Execução** (22 skills) — o trabalho tático: carrossel (gera PNG pronto, não só texto),
+  site/landing page (HTML pronto pra publicar, com design profissional via `ui-ux-pro-max`),
+  SEO, Google Meu Negócio, Google Ads, Meta Ads, relatórios, WhatsApp, design, copy.
+- **Estratégia** (10 skills) — o diferencial: ofertas (Hormozi), funil de lançamento,
   StoryBrand, vendedor Challenger, negociação, diagnóstico rápido de negócio, precificação.
   Não é só quem executa — é quem também pensa estratégia com o cliente.
-- **`_sistema/`** (4 agentes) — cuidam da memória: instalam o perfil da agência, criam
-  clientes novos, trocam de contexto entre clientes, atualizam informações pontuais.
+- **Sistema** (4 skills) — cuidam da memória: instalam o perfil da agência, criam clientes
+  novos, trocam de contexto entre clientes, atualizam informações pontuais.
+- **Design** (1 skill) — `ui-ux-pro-max`: banco de 84 estilos visuais, 192 paletas de cor e
+  74 combinações de fonte, usado pela skill `criar-site` pra decisões de design mais
+  profissionais. Open source (MIT, Next Level Builder/claudekit), licença preservada dentro
+  da própria skill.
 
 Cada cliente atendido tem sua própria pasta com perfil, tom de voz e identidade visual —
 os agentes puxam isso automaticamente, sem repetir contexto toda entrega.
@@ -44,30 +51,28 @@ os agentes puxam isso automaticamente, sem repetir contexto toda entrega.
 5. Pra cada cliente novo: **"Ative o novo-cliente"** — ele entrevista sobre o negócio, tom
    e identidade visual do cliente e cria a pasta isolada dele.
 
-### Forma alternativa — Skills soltas (Claude Chat, sem Project)
+### Claude Code (VS Code)
 
-Instale cada skill em Customize → Skills → Adicionar Skill. Sem pasta local vinculada,
-cole o conteúdo de `_memoria/` relevante direto na conversa quando for pedir uma entrega.
+Abra o terminal na pasta `ATELIE-MKT` e rode `claude`. Como as skills estão no padrão
+`.claude/skills/`, **"Ative o [nome]" deve funcionar direto**, sem passo extra.
+
+Se por algum motivo não funcionar (versão antiga do Claude Code, ou skill muito nova que
+ainda não foi indexada na sessão), use o comando alternativo apontando o caminho exato:
+```
+Leia o arquivo .claude/skills/[nome]/SKILL.md e siga as instruções dele
+```
+
+### Claude Chat (claude.ai)
+
+Instale cada skill em Customize → Skills → Adicionar Skill (zipando a pasta individual de
+`.claude/skills/[nome]/`). Sem pasta local vinculada, cole o conteúdo de `_memoria/`
+relevante direto na conversa quando for pedir uma entrega.
 
 ### Atualizando depois
 
 Sempre que algo mudar, é só pedir: `"atualiza meu foco atual: [nova prioridade]"` ou
 `"atualiza a identidade visual do cliente [nome]: cor primária é [hex]"` — não precisa
 refazer a entrevista inteira.
-
----
-
-## COMO INSTALAR
-
-### Claude Code (VS Code)
-Abra o terminal na pasta `ATELIE-MKT` e rode `claude`. Dentro do Claude Code, siga o Passo 0.
-
-### Cowork (Claude Desktop)
-Ver Passo 0 acima — é o ambiente recomendado, memória 100% automática.
-
-### Claude Chat (claude.ai)
-1. Customize → Skills → Adicionar Skill → suba a pasta de cada agente que for usar
-2. Sem pasta local, cole o conteúdo de `_memoria/` direto na conversa ou use um Project do Chat
 
 ---
 
@@ -171,14 +176,14 @@ Ativa o plano de ação e transforma esse diagnóstico num plano de 90 dias.
 
 ---
 
-## RESUMO DE TODOS OS AGENTES
+## RESUMO DE TODAS AS SKILLS
 
-### Execução — 22 agentes
+### Execução — 22 skills
 
-| Agente | O que faz |
+| Skill | O que faz |
 |---|---|
 | carrossel | Cria carrosséis com imagem PNG pronta, no padrão visual do cliente |
-| criar-site | Gera sites/landing pages em HTML prontos pra publicar |
+| criar-site | Gera sites/landing pages em HTML prontos pra publicar, com design via ui-ux-pro-max |
 | estrategista-conteudo | Calendário editorial, pilares de conteúdo, frequência |
 | roteirista-reels | Roteiros de Reels/Shorts/TikTok com gancho de abertura |
 | trafego-pago-sobral | Estrutura campanhas de Meta/Google Ads (método Pedro Sobral) |
@@ -200,9 +205,9 @@ Ativa o plano de ação e transforma esse diagnóstico num plano de 90 dias.
 | copywriter-br | Copy e persuasão pro mercado brasileiro |
 | email-marketing | Sequências de email marketing: boas-vindas, nutrição, vendas |
 
-### Estratégia — 10 agentes
+### Estratégia — 10 skills
 
-| Agente | O que faz |
+| Skill | O que faz |
 |---|---|
 | diagnostico-rapido | Mapeia o gargalo principal de um negócio em 10 perguntas |
 | estrategista-ofertas-hormozi | Ofertas irresistíveis baseadas em "$100M Offers" |
@@ -215,14 +220,33 @@ Ativa o plano de ação e transforma esse diagnóstico num plano de 90 dias.
 | storybrand-miller | Clareza de mensagem de marca (framework StoryBrand) |
 | vendedor-challenger | Modelo de vendas B2B pra ciclos longos |
 
-### Sistema — 4 agentes (memória)
+### Sistema — 4 skills (memória)
 
-| Agente | O que faz |
+| Skill | O que faz |
 |---|---|
 | instalar-memoria | Entrevista sobre a agência, preenche a memória de nível agência |
 | novo-cliente | Cria a pasta de um cliente novo com perfil, preferências e identidade visual |
 | abrir-cliente | Carrega o contexto de um cliente antes de trabalhar nele |
 | atualizar-memoria | Atualiza um campo pontual sem refazer a entrevista inteira |
+
+### Design — 1 skill (terceiros, MIT)
+
+| Skill | O que faz |
+|---|---|
+| ui-ux-pro-max | Banco de 84 estilos, 192 paletas de cor, 74 combinações de fonte — consultado pela skill `criar-site` |
+
+---
+
+## ESTRUTURA DE PASTAS
+
+```
+ATELIE-MKT/
+  .claude/skills/          → as 37 skills, padrão oficial do Claude Code
+  _memoria/                → quem é a agência (dela)
+  clientes/
+    _template/              → nunca editar, é o molde
+    [cada cliente real]/     → criado automaticamente por /novo-cliente
+```
 
 ---
 
@@ -235,5 +259,5 @@ Ativa o plano de ação e transforma esse diagnóstico num plano de 90 dias.
 
 ---
 
-Dúvidas? Rode primeiro o `Checklist-Teste-Ateliê-MKT.md` com dados fictícios antes de
-usar com cliente real.
+Dúvidas? Rode primeiro o `Checklist-Teste.md` com dados fictícios antes de usar com
+cliente real.

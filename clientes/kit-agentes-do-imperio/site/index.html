@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit Agentes do Império — Seu conselheiro estratégico, 24h por dia</title>
+<meta name="description" content="62 especialistas em vendas, tráfego, copy, negócios e estratégia — rodando dentro do Claude que você já usa. Prontos em 15 minutos, sem código.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0D0D0D;
+    --card:#131211;
+    --border:#1C1B1A;
+    --gold:#E99A3B;
+    --gold-cta:#C57C2E;
+    --title:#FEFEFE;
+    --secondary:#898989;
+    --tertiary:#555550;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--title);
+    font-family:'Poppins',sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  .container{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  section{padding:96px 0;}
+  @media (max-width:768px){
+    section{padding:64px 0;}
+  }
+  h1,h2,h3{font-weight:700;}
+  .gold{color:var(--gold);}
+  .center{text-align:center;}
+
+  /* ---------- Botão CTA ---------- */
+  .btn-cta{
+    display:inline-block;
+    background:linear-gradient(135deg,var(--gold) 0%,var(--gold-cta) 100%);
+    color:#0D0D0D;
+    font-weight:700;
+    font-size:18px;
+    padding:18px 36px;
+    border-radius:8px;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    box-shadow:0 8px 24px rgba(197,124,46,0.35);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 32px rgba(197,124,46,0.5);
+  }
+
+  /* ---------- 1. HERO ---------- */
+  .hero{
+    position:relative;
+    padding:120px 0 80px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-200px;
+    left:50%;
+    transform:translateX(-50%);
+    width:900px;
+    height:900px;
+    background:radial-gradient(circle, rgba(233,154,59,0.18) 0%, rgba(197,124,46,0.06) 45%, transparent 70%);
+    pointer-events:none;
+    z-index:0;
+  }
+  .hero-inner{position:relative;z-index:1;}
+  .badge{
+    display:inline-block;
+    font-size:13px;
+    letter-spacing:1.5px;
+    font-weight:600;
+    color:var(--gold);
+    border:1px solid var(--border);
+    background:var(--card);
+    padding:8px 18px;
+    border-radius:999px;
+    margin-bottom:28px;
+  }
+  .hero h1{
+    font-size:52px;
+    line-height:1.25;
+    max-width:780px;
+    margin:0 auto 24px;
+    letter-spacing:-0.5px;
+  }
+  .hero h1 strong{
+    color:var(--gold);
+    font-weight:800;
+  }
+  .hero-sub{
+    font-size:19px;
+    color:var(--secondary);
+    max-width:640px;
+    margin:0 auto 40px;
+  }
+  .hero-proof{
+    margin-top:32px;
+    font-size:14px;
+    color:var(--secondary);
+  }
+  .hero-proof span{margin:0 10px;}
+  @media (max-width:768px){
+    .hero{padding:80px 0 56px;}
+    .hero h1{font-size:34px;}
+    .hero-sub{font-size:17px;}
+  }
+
+  /* ---------- 2. A DOR ---------- */
+  .dor{
+    background:var(--card);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .dor .container{max-width:760px;text-align:center;}
+  .dor p{
+    font-size:19px;
+    color:#d8d8d8;
+    margin-bottom:24px;
+  }
+  .dor p:last-child{margin-bottom:0;}
+  .dor strong{color:var(--title);}
+
+  /* ---------- 3. A VIRADA ---------- */
+  .virada .container{max-width:720px;}
+  .virada h2{
+    font-size:34px;
+    text-align:center;
+    margin-bottom:36px;
+  }
+  .virada p{
+    font-size:18px;
+    color:#d8d8d8;
+    margin-bottom:22px;
+  }
+  .virada p:last-child{margin-bottom:0;}
+
+  /* ---------- 4. ESQUADRÕES ---------- */
+  .esquadroes{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .esquadroes h2{
+    font-size:34px;
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 48px;
+  }
+  .grid-esquadroes{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  @media (max-width:900px){
+    .grid-esquadroes{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:560px){
+    .grid-esquadroes{grid-template-columns:1fr;}
+  }
+  .card-esquadrao{
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:28px 22px;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .card-esquadrao:hover{
+    border-color:var(--gold);
+    transform:translateY(-3px);
+  }
+  .icon-sunburst{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(233,154,59,0.35) 0%, rgba(233,154,59,0.08) 70%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    margin-bottom:16px;
+  }
+  .card-esquadrao h3{
+    font-size:17px;
+    margin-bottom:6px;
+  }
+  .card-esquadrao .count{
+    color:var(--gold);
+    font-weight:700;
+    font-size:14px;
+  }
+  .card-esquadrao .area{
+    color:var(--secondary);
+    font-size:14px;
+    margin-top:4px;
+  }
+  .reforco{
+    text-align:center;
+    max-width:600px;
+    margin:44px auto 0;
+    color:var(--secondary);
+    font-size:16px;
+  }
+
+  /* ---------- 5. COMO FUNCIONA ---------- */
+  .como-funciona h2{
+    font-size:34px;
+    text-align:center;
+    margin-bottom:56px;
+  }
+  .timeline{
+    max-width:640px;
+    margin:0 auto;
+    position:relative;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:23px;
+    top:8px;
+    bottom:8px;
+    width:2px;
+    background:var(--border);
+  }
+  .step{
+    display:flex;
+    gap:24px;
+    margin-bottom:36px;
+    position:relative;
+  }
+  .step:last-child{margin-bottom:0;}
+  .step-num{
+    flex:none;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:var(--card);
+    border:1px solid var(--gold);
+    color:var(--gold);
+    font-weight:700;
+    font-size:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:1;
+  }
+  .step-text{padding-top:10px;}
+  .step-text strong{
+    display:block;
+    color:var(--title);
+    font-size:17px;
+    margin-bottom:4px;
+  }
+  .step-text span{color:var(--secondary);font-size:15px;}
+
+  /* ---------- 6. AUTORIDADE ---------- */
+  .autoridade{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .autoridade-inner{
+    display:flex;
+    gap:40px;
+    align-items:center;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .autoridade-foto{
+    flex:none;
+    width:180px;
+    height:180px;
+    border-radius:16px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--tertiary);
+    font-size:13px;
+    text-align:center;
+    padding:12px;
+  }
+  .autoridade h2{
+    font-size:26px;
+    margin-bottom:14px;
+  }
+  .autoridade p{
+    color:var(--secondary);
+    font-size:16px;
+    margin-bottom:14px;
+  }
+  .autoridade p:last-child{margin-bottom:0;color:#d8d8d8;}
+  @media (max-width:640px){
+    .autoridade-inner{flex-direction:column;text-align:center;}
+  }
+
+  /* ---------- 7. OFERTA ---------- */
+  .oferta h2{
+    font-size:34px;
+    text-align:center;
+    margin-bottom:44px;
+  }
+  .oferta-box{
+    max-width:640px;
+    margin:0 auto;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:48px 40px;
+  }
+  .oferta-lista{list-style:none;}
+  .oferta-lista li{
+    display:flex;
+    gap:12px;
+    padding:12px 0;
+    border-bottom:1px solid var(--border);
+    font-size:16px;
+    color:#d8d8d8;
+  }
+  .oferta-lista li:last-child{border-bottom:none;}
+  .oferta-lista li::before{
+    content:"✓";
+    color:var(--gold);
+    font-weight:700;
+    flex:none;
+  }
+  .oferta-lista li strong{color:var(--title);}
+  .preco-box{
+    text-align:center;
+    margin:40px 0 32px;
+  }
+  .preco-de{
+    color:var(--tertiary);
+    text-decoration:line-through;
+    font-size:18px;
+    display:block;
+    margin-bottom:6px;
+  }
+  .preco-por{
+    font-size:52px;
+    font-weight:800;
+    color:var(--gold);
+  }
+  .preco-nota{
+    color:var(--secondary);
+    font-size:14px;
+    margin-top:8px;
+  }
+  .oferta-cta{text-align:center;}
+
+  /* ---------- 8. GARANTIA ---------- */
+  .garantia{
+    background:var(--card);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    text-align:center;
+  }
+  .garantia-icon{font-size:40px;margin-bottom:16px;}
+  .garantia h2{font-size:28px;margin-bottom:14px;}
+  .garantia p{color:var(--secondary);font-size:17px;max-width:520px;margin:0 auto;}
+
+  /* ---------- 9. FAQ ---------- */
+  .faq h2{
+    font-size:34px;
+    text-align:center;
+    margin-bottom:44px;
+  }
+  .faq-list{max-width:700px;margin:0 auto;}
+  .faq-item{
+    border-bottom:1px solid var(--border);
+  }
+  .faq-question{
+    width:100%;
+    background:none;
+    border:none;
+    color:var(--title);
+    font-family:inherit;
+    font-size:17px;
+    font-weight:600;
+    text-align:left;
+    padding:22px 0;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+  }
+  .faq-question .plus{
+    color:var(--gold);
+    font-size:22px;
+    font-weight:400;
+    flex:none;
+    transition:transform .25s ease;
+  }
+  .faq-item.open .faq-question .plus{transform:rotate(45deg);}
+  .faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  .faq-answer p{
+    color:var(--secondary);
+    font-size:15px;
+    padding-bottom:22px;
+    max-width:620px;
+  }
+
+  /* ---------- 10. CTA FINAL ---------- */
+  .cta-final{
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .cta-final::before{
+    content:"";
+    position:absolute;
+    bottom:-200px;
+    left:50%;
+    transform:translateX(-50%);
+    width:800px;
+    height:800px;
+    background:radial-gradient(circle, rgba(233,154,59,0.14) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .cta-final-inner{position:relative;z-index:1;}
+  .cta-final h2{
+    font-size:32px;
+    max-width:600px;
+    margin:0 auto 36px;
+    line-height:1.35;
+  }
+
+  footer{
+    text-align:center;
+    padding:32px 0;
+    color:var(--tertiary);
+    font-size:13px;
+    border-top:1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+    <span class="badge">KIT AGENTES DO IMPÉRIO</span>
+    <h1>Você tem sócio, contador e advogado.<br><strong>Não tem um estrategista.</strong></h1>
+    <p class="hero-sub">62 especialistas em vendas, tráfego, copy, negócios e estratégia — rodando dentro do Claude que você já usa. Prontos em 15 minutos, sem código.</p>
+    <a href="#oferta" class="btn-cta">Quero meu conselho por R$97 ›</a>
+    <div class="hero-proof">
+      <span>🛡 Garantia de 7 dias</span>·<span>Acesso imediato</span>·<span>62 especialistas únicos</span>
+    </div>
+  </div>
+</section>
+
+<!-- 2. A DOR -->
+<section class="dor">
+  <div class="container">
+    <p>Às 23h, quando a decisão pesa e não tem ninguém pra confirmar se você está certo — <strong>você decide sozinho</strong>. Sempre decidiu.</p>
+    <p>Consultor bom cobra R$300 a R$500 a hora e tem agenda cheia até mês que vem. Mentoria de peso custa mais que sua folha de pagamento. E o Google te dá opinião genérica de gente que nunca viu seu negócio.</p>
+    <p>Você não precisa de mais informação. Você já tem informação de sobra — está travado nela. Precisa de alguém que pensa junto, na hora, sem cobrar R$500 por isso.</p>
+  </div>
+</section>
+
+<!-- 3. A VIRADA -->
+<section class="virada">
+  <div class="container">
+    <h2 class="center">Eu sou o <span class="gold">Kit Agentes do Império.</span></h2>
+    <p>Não sou um app. Não sou um curso guardando poeira na sua estante digital.</p>
+    <p>Sou 62 especialistas — vendas, tráfego, copy, precificação, liderança, negociação, mentalidade — rodando dentro do Claude que você já usa. Prontos em 15 minutos. Sem código, sem terminal, sem TI.</p>
+    <p>Não durmo. Não tenho hora de almoço. Não esqueço quem é o seu negócio — porque guardo isso na memória e uso em toda resposta.</p>
+    <p>Você pergunta "meu preço tá certo?" e eu já sei seu produto, seu público, sua margem. Porque eu já te conheço.</p>
+  </div>
+</section>
+
+<!-- 4. ESQUADRÕES -->
+<section class="esquadroes">
+  <div class="container">
+    <h2 class="center">62 especialistas. 11 áreas do seu negócio. <span class="gold">Um só lugar.</span></h2>
+    <div class="grid-esquadroes">
+      <div class="card-esquadrao">
+        <div class="icon-sunburst">🧠</div>
+        <h3>Mental & Transformação</h3>
+        <div class="count">7 agentes</div>
+        <div class="area">Mindset, crenças, performance</div>
+      </div>
+      <div class="card-esquadrao">
+        <div class="icon-sunburst">⚔️</div>
+        <h3>Estratégia & Poder</h3>
+        <div class="count">7 agentes</div>
+        <div class="area">Poder, influência, decisões sob pressão</div>
+      </div>
+      <div class="card-esquadrao">
+        <div class="icon-sunburst">🏢</div>
+        <h3>Negócios & Estratégia</h3>
+        <div class="count">8 agentes</div>
+        <div class="area">Diagnóstico, mapa estratégico, plano 90 dias</div>
+      </div>
+      <div class="card-esquadrao">
+        <div class="icon-sunburst">💰</div>
+        <h3>Vendas & Ofertas</h3>
+        <div class="count">6 agentes</div>
+        <div class="area">Ofertas, closer, qualificação, negociação</div>
+      </div>
+      <div class="card-esquadrao">
+        <div class="icon-sunburst">📣</div>
+        <h3>Tráfego & Conteúdo</h3>
+        <div class="count">5 agentes</div>
+        <div class="area">Meta Ads, Reels, criativos, SEO</div>
+      </div>
+      <div class="card-esquadrao">
+        <div class="icon-sunburst">✍️</div>
+        <h3>Copy & Narrativa</h3>
+        <div class="count">6 agentes</div>
+        <div class="area">Copywriter, storytelling, email, neuromarketing</div>
+      </div>
+      <div class="card-esquadrao">
+        <div class="icon-sunburst">📈</div>
+        <h3>Investimentos & Finanças</h3>
+        <div class="count">4 agentes</div>
+        <div class="area">Ações, oportunidades, planejamento, precificação</div>
+      </div>
+      <div class="card-esquadrao">
+        <div class="icon-sunburst">👑</div>
+        <h3>Conselho Executivo</h3>
+        <div class="count">7 agentes</div>
+        <div class="area">Liderança, RH, comunicação, tempo, cultura</div>
+      </div>
+      <div class="card-esquadrao">
+        <div class="icon-sunburst">🔍</div>
+        <h3>Google Ads</h3>
+        <div class="count">3 agentes</div>
+        <div class="area">Análise, copy RSA, relatório</div>
+      </div>
+      <div class="card-esquadrao">
+        <div class="icon-sunburst">💬</div>
+        <h3>WhatsApp</h3>
+        <div class="count">3 agentes</div>
+        <div class="area">Atendimento, disparos, chatbot</div>
+      </div>
+      <div class="card-esquadrao">
+        <div class="icon-sunburst">🎨</div>
+        <h3>Design</h3>
+        <div class="count">6 agentes</div>
+        <div class="area">Briefing, marca, naming, apresentação, criativos</div>
+      </div>
+    </div>
+    <p class="reforco">Você não precisa decorar nome de agente nem comando especial. Só conversa. O sistema identifica o especialista certo, puxa a memória do seu negócio e responde com profundidade.</p>
+  </div>
+</section>
+
+<!-- 5. COMO FUNCIONA -->
+<section class="como-funciona">
+  <div class="container">
+    <h2 class="center">15 minutos. Zero código. <span class="gold">Zero terminal.</span></h2>
+    <div class="timeline">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Baixe o kit</strong><span>Arquivo pronto, sem instalação complicada</span></div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Crie o Project no Claude Cowork</strong><span>Direto no plano gratuito, sem custo extra pra começar</span></div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Cole as instruções</strong><span>Copiar e colar, pronto</span></div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Adicione os agentes que quer usar</strong><span>Escolha os esquadrões que fazem sentido pro seu negócio</span></div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-text"><strong>Configure a Memória do Império</strong><span>5 minutos, uma vez só</span></div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-text"><strong>Teste</strong><span>Pergunte qualquer coisa sobre o seu negócio</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. AUTORIDADE -->
+<section class="autoridade">
+  <div class="container">
+    <div class="autoridade-inner">
+      <div class="autoridade-foto">[INSERIR: foto do Gabriel Lara]</div>
+      <div>
+        <h2>Por trás do sistema</h2>
+        <p><strong style="color:var(--title)">Gabriel Lara</strong> — estrategista e consultor, começou no mercado digital aos 14 anos. Ensina empresários a sair do caos operacional e assumir o comando real do próprio negócio: Mente, Trabalho, Crescimento, Governo.</p>
+        <p>O Kit Agentes do Império é a versão condensada de tudo que ele usa em consultoria — só que disponível 24h, por uma fração do preço.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. OFERTA -->
+<section class="oferta" id="oferta">
+  <div class="container">
+    <h2>O que está incluso</h2>
+    <div class="oferta-box">
+      <ul class="oferta-lista">
+        <li><span>Acesso aos <strong>62 especialistas / 11 esquadrões</strong></span></li>
+        <li><span><strong>Sistema de Memória do Império</strong> — o sistema aprende e lembra do seu negócio</span></li>
+        <li><span><strong>30 Missões guiadas</strong> — uma por dia, agente certo, comando exato</span></li>
+        <li><span><strong>10 Workflows prontos</strong> combinando múltiplos agentes</span></li>
+        <li><span><strong>Mapa de Situações</strong> — 27 problemas reais com o agente certo pra cada um</span></li>
+        <li><span><strong>Bônus 1:</strong> Acesso ao grupo de suporte no WhatsApp</span></li>
+        <li><span><strong>Bônus 2:</strong> Live de instalação ao vivo com Gabriel</span></li>
+        <li><span><strong>Atualizações</strong> — novos agentes adicionados periodicamente</span></li>
+      </ul>
+      <div class="preco-box">
+        <span class="preco-de">De R$197</span>
+        <span class="preco-por">R$97</span>
+        <div class="preco-nota">Lançamento — [INSERIR: nº de vagas ou prazo da promoção]</div>
+      </div>
+      <div class="oferta-cta">
+        <a href="#" class="btn-cta">Quero meu acesso por R$97 ›</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. GARANTIA -->
+<section class="garantia">
+  <div class="container">
+    <div class="garantia-icon">🛡</div>
+    <h2>Risco zero</h2>
+    <p>7 dias de garantia incondicional. Usou e não gostou, devolvemos — sem perguntas.</p>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section class="faq">
+  <div class="container">
+    <h2 class="center">Perguntas frequentes</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">Preciso saber programar?<span class="plus">+</span></button>
+        <div class="faq-answer"><p>Não. Não usa terminal, não usa código. É copiar, colar e conversar.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Já uso ChatGPT, isso é diferente?<span class="plus">+</span></button>
+        <div class="faq-answer"><p>Sim. Você não está comprando "mais um chat" — está comprando 62 especialistas que já sabem quem é o seu negócio e não esquecem, porque têm memória permanente.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Funciona para o meu tipo de negócio?<span class="plus">+</span></button>
+        <div class="faq-answer"><p>Sim. Os agentes cobrem vendas, tráfego, copy, precificação, liderança e mais — funciona pra qualquer negócio que precisa decidir melhor e mais rápido.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Preciso pagar alguma assinatura além do kit?<span class="plus">+</span></button>
+        <div class="faq-answer"><p>O kit roda dentro do Claude (Cowork). O plano gratuito já funciona para começar.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">E se eu não gostar?<span class="plus">+</span></button>
+        <div class="faq-answer"><p>7 dias de garantia incondicional. Sem risco.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. CTA FINAL -->
+<section class="cta-final">
+  <div class="container cta-final-inner">
+    <h2>Você não precisa de mais um curso.<br>Precisa de <span class="gold">conselho, agora</span>, quando a decisão pesa.</h2>
+    <a href="#oferta" class="btn-cta">Quero meu conselho por R$97 ›</a>
+    <div class="hero-proof">
+      <span>🛡 Garantia de 7 dias</span>·<span>Acesso imediato</span>·<span>62 especialistas únicos</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Kit Agentes do Império — todos os direitos reservados.
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var question = item.querySelector('.faq-question');
+    var answer = item.querySelector('.faq-answer');
+    question.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(openItem){
+        if(openItem !== item){
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-answer').style.maxHeight = null;
+        }
+      });
+      if(isOpen){
+        item.classList.remove('open');
+        answer.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
