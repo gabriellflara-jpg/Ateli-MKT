@@ -25,6 +25,22 @@ Formato padrão de 6 a 10 slides:
 
 Cada slide deve ter no máximo ~25 palavras. Se passar disso, corte.
 
+## Passo 0 — Checagem antes de rodar (primeira vez)
+
+Antes de rodar o script pela primeira vez nesta máquina, confirme que o Python e a
+biblioteca Pillow estão disponíveis:
+
+```
+python --version
+```
+(no Windows costuma ser `python`, não `python3` — se `python` não for reconhecido, tenta
+`python3` ou `py`)
+
+Se der erro de "Pillow não encontrado" ao rodar o script, instale com:
+```
+pip install Pillow
+```
+
 ## Passo 3 — Gerar as imagens PNG de verdade
 
 Esta skill gera o carrossel pronto em PNG (1080×1350, formato 4:5 do Instagram), não só o
@@ -47,6 +63,7 @@ texto. Use o script `scripts/gerar_carrossel.py`:
    }
    ```
 3. Rode: `python3 scripts/gerar_carrossel.py --config config.json --out ./saida-[cliente]-[tema]`
+   (no Windows, se `python3` não funcionar, tenta `python scripts/gerar_carrossel.py ...`)
 4. Isso gera um PNG por slide, numerado (`slide_01.png`, `slide_02.png`...), prontos pra
    fazer upload direto no Instagram, sem precisar do Canva.
 

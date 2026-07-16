@@ -27,8 +27,11 @@ import textwrap
 from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1080, 1350
-FONT_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-FONT_REGULAR = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+# Fontes empacotadas dentro da própria skill — funciona em qualquer sistema
+# (Windows, Mac, Linux), não depende de fontes instaladas no sistema.
+_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+FONT_BOLD = os.path.join(_SCRIPT_DIR, "..", "assets", "fonts", "DejaVuSans-Bold.ttf")
+FONT_REGULAR = os.path.join(_SCRIPT_DIR, "..", "assets", "fonts", "DejaVuSans.ttf")
 
 
 def hex_to_rgb(hex_color):
