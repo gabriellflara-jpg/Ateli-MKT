@@ -36,19 +36,38 @@ Header com menu → hero com proposta de valor → sobre → serviços → prova
 → footer.
 
 ## Passo 3 — Gerar o código
-**Antes de decidir cores/fontes/layout, consulte a skill `ui-ux-pro-max`** (banco de 84
-estilos visuais, 192 paletas de cor e 74 combinações de fonte) pra escolher uma direção de
-design coerente com o nicho do cliente — em vez de decidir cor/fonte "no chute" toda vez.
-Combine a recomendação dela com as cores/fontes já definidas no
-`identidade/design-guide.md` do cliente (se o cliente já tiver identidade definida, ela tem
-prioridade; o banco de estilos entra pra decisões que a identidade não cobriu, tipo
-composição de layout e hierarquia visual).
+
+**REGRA ABSOLUTA — zero instalação, zero dependência:**
+NUNCA sugira, peça pra instalar, ou use Tailwind, Bootstrap, npm, node_modules, build step,
+ou qualquer framework CSS/JS que exija comando de instalação. O usuário deste sistema não
+sabe rodar `npm install` e não deve precisar saber. O site tem que abrir funcionando 100%
+só com clicar duas vezes no arquivo — sem terminal, sem instalação, sem servidor local.
+
+**O que usar:** HTML + CSS puro, escrito à mão, direto dentro de uma tag `<style>` no mesmo
+arquivo (CSS inline no `<head>`). JS só se for indispensável (menu mobile, formulário),
+também direto no arquivo, sem biblioteca externa nenhuma — nem CDN de framework.
+
+Antes de decidir cores/fontes/layout, consulte a skill `ui-ux-pro-max` (banco de 84 estilos
+visuais, 192 paletas de cor e 74 combinações de fonte) pra escolher uma direção de design
+coerente com o nicho do cliente. Combine a recomendação dela com as cores/fontes já
+definidas no `identidade/design-guide.md` do cliente (se o cliente já tiver identidade
+definida, ela tem prioridade).
+
+**Atenção — filtro obrigatório ao usar `ui-ux-pro-max`:** essa skill foi feita pra uso geral
+e pode sugerir stacks técnicos (Tailwind, React, etc) junto com a recomendação visual. Pegue
+**só** a parte de cor/tipografia/composição dela — **ignore qualquer sugestão de stack,
+framework ou tecnologia** que ela mencionar. A regra acima (CSS puro, zero instalação) vale
+sempre, mesmo que o banco de estilos sugira outra coisa.
 
 Use também a skill `frontend-design` (se disponível no ambiente) pra decisões finas de
-espaçamento. HTML + CSS (+ JS mínimo se precisar de formulário ou menu mobile) em um único
-arquivo ou pasta simples, sem dependências pesadas.
+espaçamento — sempre dentro da regra acima, nunca sugerindo pacotes externos.
 
-Sempre responsivo (mobile-first) — mais da metade do tráfego de anúncio é mobile.
+Sempre responsivo (mobile-first, usando media queries de CSS puro) — mais da metade do
+tráfego de anúncio é mobile.
+
+**Se em algum momento a tentação for "isso ficaria mais bonito com Tailwind":** resista.
+CSS puro bem escrito resolve qualquer layout que uma landing page precisa. A prioridade
+número um é o arquivo abrir funcionando sozinho, sempre.
 
 **REGRA CRÍTICA — NUNCA cole o código HTML na conversa.** O usuário deste sistema pode não
 saber ler código, e uma tela cheia de tags HTML não serve pra ele avaliar o site. O código
